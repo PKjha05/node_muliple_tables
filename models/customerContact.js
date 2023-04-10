@@ -1,17 +1,17 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/dbconfig.js";
 
-class customer_address extends Model {}
+class customer_contact extends Model {}
 
 const config = {
   sequelize: sequelize,
-  tableName: "customer_address",
+  tableName: "customer_contact",
   timestamps: false,
 };
 
-customer_address.init(
+customer_contact.init(
   {
-    customerAddId: {
+    contact_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -21,24 +21,16 @@ customer_address.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    city: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    street: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    State: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    pincode: {
-      type: DataTypes.STRING,
+    mobile: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
   config
 );
 
-export default customer_address;
+export default customer_contact;
